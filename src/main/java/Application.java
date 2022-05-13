@@ -1,7 +1,12 @@
 import classes.MagicalIndex;
+import classes.PowerSet;
 import classes.RecursiveMultiply;
+import javafx.geometry.Pos;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.SortedSet;
 
 public class Application {
 
@@ -13,20 +18,28 @@ public class Application {
 
 
         ///-----Magic Index-----///
+        System.out.println("MAGIC INDEX");
         int[] ar = { -1, 0, 1, 2, 4, 10 };
         int[] ar2 = { -1, 1, 1, 4, 4, 5, 10 };
 
         runMagicIndexBrute(mi, ar2);
-        System.out.println("/n");
         runMagicIndexBinary(mi, ar2);
-        System.out.println("/n");
+        System.out.println("\n");
 
         ///------power sets------///
+        System.out.println("POWER SETS");
+        int []set = {1,3,4};
+        PowerSet ps = new PowerSet();
+        ps.printPowerSet(set,3);
+        System.out.println("\n");
+
+
 
 
         ///------Recursive Multiply------///
+        System.out.println("RECURSIVE MULTIPLY");
         System.out.println("4 * 4 = " + rm.recursiveMultiplyOne(0, 4, 4));
-        System.out.println("/n");
+
     }
 
     ///-----Magic Index-----///

@@ -1,16 +1,23 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class MagicalIndex {
 
     //brute force method to find magic index within a sorted int array
-    public int magicIndexBruteTechnique(int[] array) {
+    public ArrayList<Integer> magicIndexListBruteTechnique(int[] array) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
         //compare every value in the array against its own position only stoping when a magic index is found
         for (int i = 0; i < array.length; i++) {
             if (array[i] == i) {
-                return i;
+                arrayList.add(array[i]);
             }
         }
-        return -1;
+        if (arrayList.size() == 0) {
+            arrayList.add(-1);
+        }
+        return arrayList;
     }
 
     //recursive method using binary search pattern to find magic index within a sorted int array
@@ -41,4 +48,7 @@ public class MagicalIndex {
         }
         return -1;
     }
+
+
+
 }
